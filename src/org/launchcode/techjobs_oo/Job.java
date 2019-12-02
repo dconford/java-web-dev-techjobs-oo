@@ -1,5 +1,9 @@
 package org.launchcode.techjobs_oo;
 
+import java.lang.reflect.Field;
+
+import static org.junit.Assert.assertNotEquals;
+
 public class Job {
 
     private int id;
@@ -50,6 +54,8 @@ public class Job {
     }
 
 
+
+
     // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
     //  and id.
 
@@ -96,4 +102,62 @@ public class Job {
     public void setCoreCompetency(CoreCompetency coreCompetency) {
         this.coreCompetency = coreCompetency;
     }
+
+
+//String message = (str == null) ? "" : str.substring(0, 10);
+//System.out.println("My string is: " + ((string == null) ? "" : string));
+//    @Override
+//    public String toString() {
+//
+//        StringBuffer sb = new StringBuffer();
+//
+//        Field[] fields = getClass().getDeclaredFields(); //Get all fields incl. private ones
+//
+//        for (Field field : fields) {
+//
+//            try {
+//
+//                field.setAccessible(true);
+//                String key = field.getName();
+//                String value;
+//
+//                try {
+//                    value = (String) field.get(this);
+//                } catch (ClassCastException e) {
+//                    value = "";
+//                }
+//
+//                sb.append(key).append(": ").append(value).append("\n");
+//
+//            } catch (IllegalArgumentException e) {
+//                e.printStackTrace();
+//            } catch (SecurityException e) {
+//                e.printStackTrace();
+//            } catch (IllegalAccessException e) {
+//                e.printStackTrace();
+//            }
+//
+//        }
+//        return sb.toString();
+//    }
+    @Override
+    public String toString() {
+        return
+                "\nID: " + getId() + "\n" +
+                        "Name: " + getName() + "\n" +
+                        "Employer: " + (getEmployer().getValue().equals("") || getEmployer().getValue().equals(" ") ? "Data not available" : getEmployer()) + "\n" +
+                        "Location: " + getLocation() + "\n" +
+                        "Position Type: " + getPositionType() + "\n" +
+                        "Core Competency: " + getCoreCompetency() + "\n";
+    }
+
+////        ID:  _______
+////        Name: _______
+////        Employer: _______
+////        Location: _______
+////        Position Type: _______
+////        Core Competency: _______
+//
+//
+//   }
 }
