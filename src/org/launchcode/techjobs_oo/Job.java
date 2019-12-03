@@ -53,9 +53,6 @@ public class Job {
         return getId();
     }
 
-
-
-
     // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
     //  and id.
 
@@ -145,19 +142,10 @@ public class Job {
         return
                 "\nID: " + getId() + "\n" +
                         "Name: " + getName() + "\n" +
-                        "Employer: " + (getEmployer().getValue().equals("") || getEmployer().getValue().equals(" ") ? "Data not available" : getEmployer()) + "\n" +
+                        "Employer: " + getEmployer() + "\n" +
+           //             "Employer: " + (getEmployer().getValue().equals("") || getEmployer().getValue().equals(null) ? "Data not available" : getEmployer()) + "\n" +
                         "Location: " + getLocation() + "\n" +
                         "Position Type: " + getPositionType() + "\n" +
                         "Core Competency: " + getCoreCompetency() + "\n";
     }
-
-////        ID:  _______
-////        Name: _______
-////        Employer: _______
-////        Location: _______
-////        Position Type: _______
-////        Core Competency: _______
-//
-//
-//   }
 }
